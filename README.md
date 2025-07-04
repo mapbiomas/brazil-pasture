@@ -1,9 +1,7 @@
-<!--- 
+![Vinícius Mesquita](source/lapig_logo_github.png)
 <div>
-    <img src='https://github.com/mapbiomas-brazil/cerrado/blob/mapbiomas60/2-general-map/www/ipam_logo.jpg?raw=true' height='auto' width='160' align='right'>
-    <h1> MAPBIOMAS BRAZIL – CERRADO BIOME </h1>
+    <h1> MAPBIOMAS BRAZIL – PASTURE </h1>
 </div>
---->
 
 Developed by the [Remote Sensing and GIS Lab (LAPIG)](https://lapig.iesa.ufg.br/)
 
