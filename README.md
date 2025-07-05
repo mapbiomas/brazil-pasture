@@ -21,15 +21,14 @@ For detailed methodology and technical specifications, refer to the Pasture Appe
 
 The repository is organized into subfolders by image source and processing resolution, following the MapBiomas classification workflow for the pasturelands:
 
-<!--- 
-- [`lulc_30m_landsat`](https://github.com/mapbiomas/brazil-cerrado/tree/main/lulc_30m_landsat):  
+- [`lulc_30m_landsat`](https://github.com/mapbiomas/brazil-pasture/tree/main/lulc_30m_landsat%20):  
   Scripts for generating annual LULC maps at **30-meter resolution**, using Landsat imagery.
 
-- [`lulc_10m_sentinel`](https://github.com/mapbiomas/brazil-cerrado/tree/main/lulc_10m_sentinel):  
+- [`lulc_10m_sentinel`](https://github.com/mapbiomas/brazil-pasture/tree/main/lulc_10m_sentinel):  
   Scripts for generating annual LULC maps at **10-meter resolution**, using Sentinel-2 imagery.
 
 Each subfolder includes a step-by-step processing chain with classification scripts, filtering procedures, and additional assets used in the generation of MapBiomas Cerrado collections.
---->
+
 ---
 
 ## Citation
