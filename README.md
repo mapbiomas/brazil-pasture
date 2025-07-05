@@ -27,7 +27,7 @@ The repository is organized into subfolders by image source and processing resol
 - [`lulc_10m_sentinel`](https://github.com/mapbiomas/brazil-pasture/tree/main/lulc_10m_sentinel):  
   Scripts for generating annual LULC maps at **10-meter resolution**, using Sentinel-2 imagery.
 
-Each subfolder includes a step-by-step processing chain with classification scripts, filtering procedures, and additional assets used in the generation of MapBiomas Cerrado collections.
+Each subfolder includes a step-by-step processing chain with classification scripts, filtering procedures, and additional assets used in the generation of MapBiomas Pasture collections.
 
 ---
 
