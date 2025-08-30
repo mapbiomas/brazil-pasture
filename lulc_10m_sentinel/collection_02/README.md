@@ -1,4 +1,4 @@
-![Vinícius Mesquita](Logo_v2.png)
+![Vinícius Mesquita](lapig_logo_github.png)
 
 ## Overview
 
