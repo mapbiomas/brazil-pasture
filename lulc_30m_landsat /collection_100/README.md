@@ -20,7 +20,7 @@ This repository organizes the pasture mapping codes developed by [Laboratório d
   
 **Recommendations**: 
 
-The easiest way to execute the post-processing is using [UV](https://docs.astral.sh/uv/getting-started/installation/#installation-methods) Python througth the CLI:
+The easiest way to execute the post-processing is using [UV](https://docs.astral.sh/uv/getting-started/installation/#installation-methods) Python througth the CLI in your base folder:
 
 ```bash
 #1
