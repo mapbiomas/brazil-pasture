@@ -6,7 +6,7 @@ This repository organizes the pasture mapping codes developed by [Laboratório d
 
 **Requisites**:
 
-* Python 3.9 or above
+* Python 3.10 or above
   
 * Gdal python package and Gdal Binaries
   
@@ -18,37 +18,33 @@ This repository organizes the pasture mapping codes developed by [Laboratório d
   
 * An folder synchronization with Google Drive ([For Windows](https://www.google.com/drive/download/) | [For Unix](https://github.com/odeke-em/drive))
   
-**Recommendations for Windows**: 
-* Install [Miniconda - Python > 3.9]([https://python-poetry.org/docs/#windows-powershell-install-instructions](https://docs.anaconda.com/miniconda/) or above and the [Gdal package](https://anaconda.org/conda-forge/gdal). For Windows users, we need to add some system variables like:
-      
-* PYTHONPATH =  C:\ProgramData\Miniconda3\Library\bin;
-* GDAL_DATA = C:\ProgramData\Miniconda3\Library\share\gdal
-  
-**Recommendations for Unix**:
+**Recommendations**: 
 
-* Install Python-Gdal and Gdal Binaries (sudo apt-get install -y python-gdal; sudo apt-get install -y gdal)
+The easiest way to execute the post-processing is using [UV](https://docs.astral.sh/uv/getting-started/installation/#installation-methods) Python througth the CLI:
 
-* Install Earth Engine python library. [Click here to see how to install and configure with Python PIP.](https://developers.google.com/earth-engine/guides/python_install )
+#1
+uv init
+
+#2
+uv python install 3.10 
+
+#3
+uv add pip scipy joblib earthengine-api
+
+#4
+uv run earthengine authenticate
+
+#5 On Windows
+uv run pip install https://github.com/cgohlke/geospatial-wheels/releases/download/v2025.1.20/GDAL-3.10.1-cp310-cp310-win_amd64.whl
+
+#5 On Linux
+uv run pip install GDAL==3.10
 
 # How to use
 
 ## 1. Run classification in Google Earth Engine (GEE)
 
-You have 2 options for make your classification:
-
-### Using Python with GEE
-
-First download/clone the in this Github repository, then acess the **1_gee_processing** folder through the system terminal/prompt and execute the command bellow:
-
-```shell
-python LANDSAT_COL9_1985_2023_justRun_v2.py
-```
-
-### Using JavaScript in GEE
-
-* [Access this link](https://code.earthengine.google.com/344438c5befcc29b90b74d048ff26def) and, if desired, change the parameters of ***year***, ***landsatWRSPath***, ***landsatWRSRow***, ***my_folder***. After that you can click in **Run** and export your result in **Task**.
-
-Also, you can change the training dataset (cultivated and natural) by changing the variable ***TRAIN_DATA*** (line 9).
+* [Access this link](https://code.earthengine.google.com/f789584eda6ba58ededc0526f0de8da7) and, if desired, change the parameters of ***year***, ***landsatWRSPath_nm***, ***landsatWRSRow_nm***, ***my_folder***. After that you can click in **Run** and export your result in **Task**.
 
 ## 2. Prepare the data for Multidimensional Median Filter
 
@@ -61,7 +57,7 @@ In addition, if you want to view a file in a GIS like QGIS, just add a pyramid t
 
 * gdaladdo -ro lapig_pasture_map_<year xxxx>.tif 2 4 8 --config COMPRESS_OVERVIEW LZW --config USE_RRD YES
 
-## 3. Applying the multidimensional median filter (3 x 3 x 5)
+## 3. Applying the multidimensional median filter (3 x 3 x 5) - ***RUN THIS IF YOU HAVE MORE THAN FIVE YEARS OF CONTINUOUS MAPPING!***
 
 This code need 2 arguments to run, the **<input directory>** and the **<output directory>** (e.g. python 2_Multidimensional_median_filter prob_rasters_dir filtered_rasters_dir).
 
