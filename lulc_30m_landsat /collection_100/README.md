@@ -22,6 +22,7 @@ This repository organizes the pasture mapping codes developed by [Laboratório d
 
 The easiest way to execute the post-processing is using [UV](https://docs.astral.sh/uv/getting-started/installation/#installation-methods) Python througth the CLI:
 
+```bash
 #1
 uv init
 
@@ -39,6 +40,8 @@ uv run pip install https://github.com/cgohlke/geospatial-wheels/releases/downloa
 
 #5 On Linux
 uv run pip install GDAL==3.10
+
+```
 
 # How to use
 
