@@ -27,7 +27,13 @@ The repository is organized into subfolders by image source and processing resol
 - [`lulc_10m_sentinel`](https://github.com/mapbiomas/brazil-pasture/tree/main/lulc_10m_sentinel):  
   Scripts for generating annual LULC maps at **10-meter resolution**, using Sentinel-2 imagery.
 
-Each subfolder includes a step-by-step processing chain with classification scripts, filtering procedures, and additional assets used in the generation of MapBiomas Pasture collections.
+- [`product_pasture_vigor_condition_30m_MOD13Q1_EVI`](https://github.com/mapbiomas/brazil-pasture/tree/main/pasture_vigor_condition_30m_mod13q1_evi):  
+  Scripts for generating Pasture Vigor Condition product at **30-meter resolution**, using MOD13Q1 EVI and LULC 30m pasture maps.
+  
+- [`product_pasture_biomass_productivity_30m_GPW_uGPP`](https://github.com/mapbiomas/brazil-pasture/tree/main/pasture_biomass_productivity_30m_gpw_ugpp):  
+  Scripts for generating Pasture Biomass Productivity product at **30-meter resolution**, using GPW uncalibrated Gross Primary Productivity (uGPP) and LULC 30m pasture maps.
+
+Each subfolder includes a step-by-step processing chain with processing/classification scripts, filtering procedures, and additional assets used in the generation of MapBiomas Pasture LULC collections and products.
 
 ---
 
@@ -41,5 +47,5 @@ If you use any part of this repository or the resulting data in your work, pleas
 
 For questions, suggestions, or to report issues, please contact:
 
-- [vinicius.mesquita@ufg.br](mailto:vinicius.mesquita@ufg.b)  
+- [vinicius.mesquita@ufg.br](mailto:vinicius.mesquita@ufg.br)  
 - [contato@mapbiomas.org](mailto:contato@mapbiomas.org)
