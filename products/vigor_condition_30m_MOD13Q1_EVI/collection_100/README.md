@@ -32,7 +32,7 @@ Following the latest MapBiomas standards, this pipeline implements two critical 
 
 ## 🔬 Scientific Methodology
 
-The technical foundation of this pipeline follows the analytical approach presented by Santos, Mesquita, et al. (2022) in the article *"Assessing the Wall-to-Wall Spatial and Qualitative Dynamics of the Brazilian Pasturelands 2010–2018"*. This study established a high-resolution workflow for mapping pasture vigor condition across the entire Brazilian territory.
+The technical foundation of this pipeline follows the analytical approach presented by [Santos et al. (2022)](https://www.mdpi.com/2072-4292/14/4/1024) in the article *"Assessing the Wall-to-Wall Spatial and Qualitative Dynamics of the Brazilian Pasturelands 2010–2018"*. This study established a high-resolution workflow for mapping pasture vigor condition across the entire Brazilian territory.
 
 ## 📂 Repository Structure
 
