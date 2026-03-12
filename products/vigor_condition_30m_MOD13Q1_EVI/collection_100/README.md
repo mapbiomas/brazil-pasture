@@ -2,7 +2,7 @@
 
 # Brazilian Pasture Vigor Condition (CVP) Pipeline
 
-This repository contains the high-performance processing chain used to generate the **Pasture Vigor Condition (CVP)** time series for Brazil (2000–2024). This workflow implements the methodologies described in the **MapBiomas ATDB for Collections 7, 8, 9 and 10**.
+This repository contains the high-performance processing chain used to generate the **Pasture Vigor Condition (CVP)** time series for Brazil (2000–2024). This workflow implements the methodologies described in the **MapBiomas ATDB for Collections 7, 8, 9, and 10**.
 
 ## 🛰 Methodology & Scientific Basis
 
@@ -19,15 +19,29 @@ To extract the true underlying health of the pasture:
 * **Gap-Filling (TMWM):** The raw EVI series is processed via the *Temporal Moving Window Medoid* algorithm to remove cloud artifacts and missing data.
 * **De-seasonality (STL):** We apply *Seasonal-Trend decomposition using Loess*. This isolates the **Trend component**, effectively removing the seasonal "green-up" driven by rainfall, leaving only the structural vegetative vigor.
 
-### 3. Collection 7/8/9 Refinements
+
+
+### 3. Recent Refinements (Collections 7–10)
 
 Following the latest MapBiomas standards, this pipeline implements two critical updates:
 
 * **Monthly Resolution:** Uses monthly data instead of bimonthly for better temporal precision.
-* **Median Aggregation (50th Percentile):** We use the **median** (instead of the 90th percentile used in Col 6) to produce a more conservative and inter-annually consistent estimate of pasture health.
+* **Median Aggregation (50th Percentile):** We use the **median** (instead of the 90th percentile used in earlier collections) to produce a more conservative and inter-annually consistent estimate of pasture health.
+
+
 
 ## 🔬 Scientific Methodology
-The technical foundation of this pipeline follows the analytical approach presented by [Santos et al. (2022)](https://www.mdpi.com/2072-4292/14/4/1024) in the article "Assessing the Wall-to-Wall Spatial and Qualitative Dynamics of the Brazilian Pasturelands 2010–2018". This study established a high-resolution workflow for mapping pasture quality across the entire Brazilian territory.
+
+The technical foundation of this pipeline follows the analytical approach presented by Santos, Mesquita, et al. (2022) in the article *"Assessing the Wall-to-Wall Spatial and Qualitative Dynamics of the Brazilian Pasturelands 2010–2018"*. This study established a high-resolution workflow for mapping pasture quality across the entire Brazilian territory.
+
+## 📂 Repository Structure
+
+The core logic is divided into specialized scripts:
+
+* **`run_vigor_condition.sh`**: Main orchestration script using `GDAL` and `GNU Parallel`.
+* **`2_0_temporal_median_filter_parallel.py`**: Python implementation for temporal smoothing.
+* **`6_normalization.py`**: Normalizes EVI values by Biome to account for regional edaphoclimatic conditions.
+* **`mod13q1_stl-trend_tiles_col10.csv`**: Manifest of trend-decomposed MODIS tiles for download.
 
 ## 💻 Running on Windows (via WSL2)
 
@@ -73,23 +87,25 @@ The `run_vigor_condition.sh` script automates the following stages:
 
 | Stage | Process | Description |
 | --- | --- | --- |
-| **0** | **Raw Processing** | Merging trend tiles, reprojecting to EPSG:4326, and using LERC compression. |
-| **1** | **Annual Mean** | Calculating the annual baseline from the 12 monthly trend components. |
-| **2** | **Temporal Filter** | Applying a median filter to smooth inter-annual artifacts. |
+| **0** | **Raw Processing** | Merging trend tiles, reprojecting to EPSG:4326, and using LERC compression. 
+| **1** | **Annual Mean** | Calculating the annual baseline from the 12 monthly trend components. 
+| **2** | **Temporal Filter** | Applying a median filter to smooth inter-annual artifacts. 
 | **3** | **Upsampling** | Matching the GPW mask resolution ($0.000269^\circ$). |
-| **4** | **Pasture Mask** | Filtering results using the MapBiomas Pasture layer. |
-| **5-7** | **Normalization** | Performing **Biome-specific normalization** to respect regional ecological baselines. |
-| **8** | **CVP Classification** | Mapping the normalized trend into three quality classes. |
+| **4** | **Pasture Mask** | Filtering results using the MapBiomas Pasture layer. 
+| **5-7** | **Normalization** | Performing **Biome-specific normalization** (Step 6) to respect regional ecological baselines. 
+| **8** | **CVP Classification** | Mapping the normalized trend into three quality classes. 
+
 
 ## 📊 Classification Schema
 
-The final **CVP** output classifies the underlying trend into three levels of quality:
+The final **CVP** output classifies the underlying trend into three levels of quality, as validated in the Cerrado biome:
 
 | Class | Range (Norm EVI) | Condition |
 | --- | --- | --- |
-| **1** | $0.0 - 0.4$ | **Degraded:** Low vegetative vigor / structural loss. |
-| **2** | $0.4 - 0.6$ | **Intermediate:** Stable or average condition. |
-| **3** | $0.6 - 1.0$ | **Productive:** High vigor / optimal structural health. |
+| **1** | $0.0 - 0.4$ | <br>** Low:** Persistent low productivity.
+| **2** | $0.4 - 0.6$ | <br>** Medium:** Transitory condition or initial degradation.
+| **3** | $0.6 - 1.0$ | <br>** High:** High vigor / optimal structural health.
+
 
 ## 🛠 Requirements
 
