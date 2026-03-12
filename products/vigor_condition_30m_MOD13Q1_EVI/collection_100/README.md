@@ -60,8 +60,8 @@ sudo apt install gdal-bin python3-gdal parallel wget -y
 4. **Access Windows Files:** Your Windows drives are located at `/mnt/c/` or `/mnt/d/`. Navigate to your project folder:
 ```bash
 cd /mnt/c/Users/YourName/Documents/pasture_project
-chmod +x process_cvp.sh
-./process_cvp.sh
+chmod +x run_vigor_condition.sh
+./run_vigor_condition.sh
 
 ```
 
@@ -69,7 +69,7 @@ chmod +x process_cvp.sh
 
 ## 📂 Pipeline Stages
 
-The `process_cvp.sh` script automates the following stages:
+The `run_vigor_condition.sh` script automates the following stages:
 
 | Stage | Process | Description |
 | --- | --- | --- |
