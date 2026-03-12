@@ -1,3 +1,5 @@
+![Vinícius Mesquita](lapig_logo_github.png)
+
 # Pasture Dry Biomass Productivity Mapping (MapBiomas Collection 10)
 
 This repository contains the Google Earth Engine (GEE) implementation for calculating annual **Pasture Dry Biomass** (tonnes/ha/year) across Brazil for the period 2000–2024. The methodology integrates **MapBiomas Collection 10** land cover data with high-resolution productivity datasets from the **Global Pasture Watch (GPW)** consortium.
