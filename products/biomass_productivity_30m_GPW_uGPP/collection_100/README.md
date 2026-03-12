@@ -78,7 +78,6 @@ The script follows a direct conversion logic:
 
 ### Key Scientific Literature
 
-* **Consoli, D., Parente, L., et al. (2024).** A computational framework for processing time-series of earth observation data based on discrete convolution: global-scale historical Landsat cloud-free aggregates at 30 m spatial resolution. *PeerJ* 12:e18585.
 * **Isik, M. S., et al. (2025).** *Light Use Efficiency (LUE) based bimonthly Gross Primary Productivity (GPP) for global grasslands at 30 m spatial resolution (2000-2022)*. PeerJ.
 * **Ma, S. et al. (2018).** *Variations and determinants of carbon content in plants: a global synthesis*. Biogeosciences, [s. l.], vol. 15, no. 3, p. 693–702. DOI 10.5194/bg-15-693-2018.
 * **Robinson, N. P., et al. (2018).** *Terrestrial primary production for the conterminous United States derived from Landsat 30 m and MODIS 250 m*. Remote Sensing in Ecology and Conservation.
