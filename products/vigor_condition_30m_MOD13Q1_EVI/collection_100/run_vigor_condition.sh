@@ -3,7 +3,7 @@
 # ==============================================================================
 # PASTURE VIGOR CONDITION (CVP) PIPELINE 
 # Data: MOD13Q1 EVI Trend Component (Gap-filled & STL Decomposed)
-# Geography: Brazil (Biomes and States) | Period: 2000-2024
+# Geography: Brazil (Biomes) | Period: 2000-2024
 # ==============================================================================
 
 ### PRE-PROCESSING: DATA ACQUISITION
