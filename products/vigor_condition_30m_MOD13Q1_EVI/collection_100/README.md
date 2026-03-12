@@ -2,11 +2,11 @@
 
 # Brazilian Pasture Vigor Condition (CVP) Pipeline
 
-This repository contains the high-performance processing chain used to generate the **Pasture Vigor Condition (CVP)** time series for Brazil (2000–2024). This workflow implements the methodologies described in the **MapBiomas ATDB for Collections 7, 8, 9, and 10**.
+This repository contains the high-performance processing chain used to generate the **Pasture Vigor Condition (CVP)** time series for Brazil (2000–2024). This workflow implements the methodologies described in the **[MapBiomas ATDB](https://brasil.mapbiomas.org/wp-content/uploads/sites/4/2026/01/Pasture-Appendix-ATBD-Collection-10-V2.pdf) for Collections 7, 8, 9, and 10**.
 
 ## 🛰 Methodology & Scientific Basis
 
-Monitoring pasture quality at a national scale requires a stable satellite signal that is resilient to cloud cover and seasonal variability.
+Monitoring pasture vigor condition at a national scale requires a stable satellite signal that is resilient to cloud cover and seasonal variability.
 
 ### 1. Data Foundation
 
@@ -32,7 +32,7 @@ Following the latest MapBiomas standards, this pipeline implements two critical 
 
 ## 🔬 Scientific Methodology
 
-The technical foundation of this pipeline follows the analytical approach presented by Santos, Mesquita, et al. (2022) in the article *"Assessing the Wall-to-Wall Spatial and Qualitative Dynamics of the Brazilian Pasturelands 2010–2018"*. This study established a high-resolution workflow for mapping pasture quality across the entire Brazilian territory.
+The technical foundation of this pipeline follows the analytical approach presented by Santos, Mesquita, et al. (2022) in the article *"Assessing the Wall-to-Wall Spatial and Qualitative Dynamics of the Brazilian Pasturelands 2010–2018"*. This study established a high-resolution workflow for mapping pasture vigor condition across the entire Brazilian territory.
 
 ## 📂 Repository Structure
 
@@ -93,12 +93,10 @@ The `run_vigor_condition.sh` script automates the following stages:
 | **3** | **Upsampling** | Matching the GPW mask resolution ($0.000269^\circ$). |
 | **4** | **Pasture Mask** | Filtering results using the MapBiomas Pasture layer. 
 | **5-7** | **Normalization** | Performing **Biome-specific normalization** (Step 6) to respect regional ecological baselines. 
-| **8** | **CVP Classification** | Mapping the normalized trend into three quality classes. 
+| **8** | **CVP Classification** | Mapping the normalized trend into three vigor classes. 
 
 
 ## 📊 Classification Schema
-
-The final **CVP** output classifies the underlying trend into three levels of quality, as validated in the Cerrado biome:
 
 | Class | Range (Norm EVI) | Condition |
 | --- | --- | --- |
