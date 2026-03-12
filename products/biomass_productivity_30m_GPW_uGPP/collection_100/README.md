@@ -68,10 +68,10 @@ For in-depth details regarding algorithms, unit conversions, and calibration for
 ### Scientific Literature
 
 * **Isik, M. S., et al. (2025).** *Light Use Efficiency (LUE) based bimonthly Gross Primary Productivity (GPP) for global grasslands at 30 m spatial resolution (2000-2022)*. PeerJ.
-* **Veloso, G. A., et al. (2020).** *Modelling gross primary productivity in tropical savanna pasturelands for livestock intensification in Brazil*. Remote Sensing Applications: Society and Environment.
+* **Ma, S. et al. (2018).** *Variations and determinants of carbon content in plants: a global synthesis*. Biogeosciences, [s. l.], vol. 15, no. 3, p. 693–702. DOI 10.5194/bg-15-693-2018.
 * **Robinson, N. P., et al. (2018).** *Terrestrial primary production for the conterminous United States derived from Landsat 30 m and MODIS 250 m*. Remote Sensing in Ecology and Conservation.
 * **Sanquetta, C. R., et al. (2022).** *Assessing the carbon stock of cultivated pastures in Rondônia, southwestern Brazilian Amazon*. Anais da Academia Brasileira de Ciências, [s. l.], vol. 94, no. 4. DOI 10.1590/0001-3765202220210262.
-*  **Ma, S. et al. (2018).** *Variations and determinants of carbon content in plants: a global synthesis*. Biogeosciences, [s. l.], vol. 15, no. 3, p. 693–702. DOI 10.5194/bg-15-693-2018. 
+* **Veloso, G. A., et al. (2020).** *Modelling gross primary productivity in tropical savanna pasturelands for livestock intensification in Brazil*. Remote Sensing Applications: Society and Environment.
 
 ---
 
