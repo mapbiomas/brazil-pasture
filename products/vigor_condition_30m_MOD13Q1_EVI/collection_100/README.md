@@ -1,3 +1,5 @@
+![Vinícius Mesquita](lapig_logo_github.png)
+
 # Brazilian Pasture Vigor Condition (CVP) Pipeline
 
 This repository contains the high-performance processing chain used to generate the **Pasture Vigor Condition (CVP)** time series for Brazil (2000–2024). This workflow implements the methodologies described in the **MapBiomas ATDB for Collections 7, 8, 9 and 10**.
