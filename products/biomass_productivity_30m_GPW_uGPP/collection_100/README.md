@@ -51,7 +51,7 @@ For MapBiomas **Collection 10**, the annual uGPP carbon estimates ($gC/m²/year$
 
 ### Technical Considerations
 
-* **Input Consistency:** While uGPP is provided at 30m, temperature (1km) and PAR (~111km) inputs are derived from coarser products, reseampled to 30m using cubic-spline method.
+* **Input Consistency:** While uGPP is provided at 30m, temperature (1km) and PAR (~111km) inputs are derived from coarser products, resampled to 30m using the cubic-spline method to ensure spatial continuity.
 * **Annual Basis:** The data is delivered on an annual basis, providing a stable estimate of yearly productivity across the world.
 
 ---
