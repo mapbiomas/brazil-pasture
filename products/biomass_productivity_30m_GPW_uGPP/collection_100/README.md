@@ -4,7 +4,7 @@
 
 This repository contains the Google Earth Engine (GEE) implementation for calculating annual **Pasture Aboveground Dry Biomass** (tonnes Dry Matter (DM)/ha/year) across Brazil for the period 2000–2024.
 
-The methodology integrates **MapBiomas Collection 10** land cover data with high-resolution uncalibrated Gross Primary Productivity (uGPP) datasets from the **Global Pasture Watch (GPW)** initiative.
+The methodology integrates **MapBiomas Collection 10** land cover data with high-resolution [uncalibrated Gross Primary Productivity (uGPP)](https://developers.google.com/earth-engine/datasets/catalog/projects_global-pasture-watch_assets_ggpp-30m_v1_ugpp_m?hl=pt-br) datasets from the **Global Pasture Watch (GPW)** initiative.
 
 ---
 
