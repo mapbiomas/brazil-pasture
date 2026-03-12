@@ -72,7 +72,3 @@ For in-depth details regarding algorithms, unit conversions, and calibration for
 * **Robinson, N. P., et al. (2018).** *Terrestrial primary production for the conterminous United States derived from Landsat 30 m and MODIS 250 m*. Remote Sensing in Ecology and Conservation.
 * **Sanquetta, C. R., et al. (2022).** *Assessing the carbon stock of cultivated pastures in Rondônia, southwestern Brazilian Amazon*. Anais da Academia Brasileira de Ciências, [s. l.], vol. 94, no. 4. DOI 10.1590/0001-3765202220210262.
 * **Veloso, G. A., et al. (2020).** *Modelling gross primary productivity in tropical savanna pasturelands for livestock intensification in Brazil*. Remote Sensing Applications: Society and Environment.
-
----
-
-**Next Step:** Would you like me to help you generate a README file specifically for a GitHub repository using this content?
