@@ -1,12 +1,13 @@
 ![Vinícius Mesquita](lapig_logo_github.png)
 
-# Brazilian Pasture Vigor Condition (CVP) Pipeline
+# Pasture Vigor Condition (CVP) processing pipeline
 
 This repository contains the high-performance processing chain used to generate the **Pasture Vigor Condition (CVP)** time series for Brazil (2000–2024). This workflow implements the methodologies described in the **[MapBiomas ATDB](https://brasil.mapbiomas.org/wp-content/uploads/sites/4/2026/01/Pasture-Appendix-ATBD-Collection-10-V2.pdf) for Collections 7, 8, 9, and 10**.
 
-## 🛰 Methodology & Scientific Basis
+## 🛰🔬 Methodology & Scientific Basis
 
-Monitoring pasture vigor condition at a national scale requires a stable satellite signal that is resilient to cloud cover and seasonal variability.
+Monitoring pasture vigor condition at a national scale requires a stable and reliable satellite signal that is resilient to cloud cover and seasonal variability. The technical foundation of this pipeline follows the analytical approach presented by [Santos et al. (2022)](https://www.mdpi.com/2072-4292/14/4/1024) in the article *"Assessing the Wall-to-Wall Spatial and Qualitative Dynamics of the Brazilian Pasturelands 2010–2018"*. This study established a high-resolution workflow for mapping pasture vigor condition across the entire Brazilian territory.
+
 
 ### 1. Data Foundation
 
@@ -14,10 +15,10 @@ We utilize **MODIS MOD13Q1 (EVI)** data ($250m$ resolution) due to its superior 
 
 ### 2. Signal Processing (TMWM + STL)
 
-To extract the true underlying health of the pasture:
+To extract stable and reliable pixel information, the following pre-procesing was conducted by OpenGeoHub Foundation:
 
-* **Gap-Filling (TMWM):** The raw EVI series is processed via the *Temporal Moving Window Medoid* algorithm to remove cloud artifacts and missing data.
-* **De-seasonality (STL):** We apply *Seasonal-Trend decomposition using Loess*. This isolates the **Trend component**, effectively removing the seasonal "green-up" driven by rainfall, leaving only the structural vegetative vigor.
+* **Gap-Filling ([SeasConvFill](https://github.com/openlandmap/scikit-map)):** The raw Enhanced Vegetation Index (EVI) series is processed via the *SeasConvFill* algorithm to remove cloud artifacts and missing data.
+* **De-seasonality ([STL](https://www.statsmodels.org/dev/generated/statsmodels.tsa.seasonal.STL.html#statsmodels.tsa.seasonal.STL)):** We apply *Seasonal-Trend decomposition using Loess*. This isolates the **Trend component**, effectively removing the seasonal "green-up" driven by rainfall, leaving only the structural vegetative vigor.
 
 
 
@@ -27,12 +28,6 @@ Following the latest MapBiomas standards, this pipeline implements two critical 
 
 * **Monthly Resolution:** Uses monthly data instead of bimonthly for better temporal precision.
 * **Median Aggregation (50th Percentile):** We use the **median** (instead of the 90th percentile used in earlier collections) to produce a more conservative and inter-annually consistent estimate of pasture health.
-
-
-
-## 🔬 Scientific Methodology
-
-The technical foundation of this pipeline follows the analytical approach presented by [Santos et al. (2022)](https://www.mdpi.com/2072-4292/14/4/1024) in the article *"Assessing the Wall-to-Wall Spatial and Qualitative Dynamics of the Brazilian Pasturelands 2010–2018"*. This study established a high-resolution workflow for mapping pasture vigor condition across the entire Brazilian territory.
 
 ## 📂 Repository Structure
 
@@ -78,8 +73,6 @@ chmod +x run_vigor_condition.sh
 ./run_vigor_condition.sh
 
 ```
-
-
 
 ## 📂 Pipeline Stages
 
