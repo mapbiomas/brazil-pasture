@@ -21,8 +21,8 @@ $$GPP = uGPP \times \epsilon_{LUEmax}$$
 The **uGPP** component incorporates:
 
 * **PAR (Photosynthetically Active Radiation):** 1° CERES radiation data.
-* **fAPAR (Fraction of absorbed PAR):** Derived from Landsat archives.
-* **Environmental Scalars:** Stress factors derived from 1-km MODIS temperature data.
+* **fAPAR (Fraction of absorbed PAR):** Derived from [Landsat ARCO](https://opengeohub.org/2023/01/12/analysis-ready-and-cloud-optimized-arco-landsat-data-for-all/).
+* **Environmental Scalars:** Water stress factors derived [Landsat ARCO](https://opengeohub.org/2023/01/12/analysis-ready-and-cloud-optimized-arco-landsat-data-for-all/) and temperature stress factors from 1-km MODIS temperature data.
 
 > 
 > **Calibration Flexibility:** The GPW baseline $LUE_{max}$ is set to $1~gC/m²/day/MJ$. This allows users to calibrate the GPP values according to specific regional conditions or land cover maps, as the uGPP data does not inherently include the $LUE_{max}$ application.
