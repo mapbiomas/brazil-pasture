@@ -72,12 +72,13 @@ def temporalPercs(image):
 
     return result
 
-#Function made to generate the latitude and the longitude of each pixel
-def getLatLong(img):
-    ## Gets the projection
-    proj = ee.Image(img).select(0).projection() #Gets the reference projection from one image
-    latlon = ee.Image.pixelLonLat() #Estimates the latitude and longitude for each pixel
-    return ee.Image(img).addBands(latlon.select('longitude', 'latitude')) #Adds the latitude and the longitude as a band
+# Coordinate metrics unavailable due to gradient anomaly bias detected in probability results
+# #Function made to generate the latitude and the longitude of each pixel
+# def getLatLong(img):
+#     ## Gets the projection
+#     proj = ee.Image(img).select(0).projection() #Gets the reference projection from one image
+#     latlon = ee.Image.pixelLonLat() #Estimates the latitude and longitude for each pixel
+#     return ee.Image(img).addBands(latlon.select('longitude', 'latitude')) #Adds the latitude and the longitude as a band
 
 #Function made to mask cloud and shadows in the images, based on the quality band from Google Cloud Score (cs)
 def maskClouds(img):
@@ -177,7 +178,7 @@ def run_classficiation(carta, year):
         .map(onlyWetSeasonNei));
     
     #Applies the functions to calculate percentiles, get latitude and longitude, calculate the temporal reducers and adds the elevation and slope data.
-    temporalData = (getLatLong(temporalPercs(wetSpectralDataNei))
+    temporalData = (temporalPercs(wetSpectralDataNei)
       .addBands([temporalFeatures(wetSpectralDataNei),elevation, slope]));
 
     featureSpace = ee.Image(temporalData)
@@ -198,12 +199,25 @@ def run_classficiation(carta, year):
       classFieldName = 'cons_2022'
       trainSamples_main = ee.FeatureCollection(trainSamples_main).select('cons_2022')
     
-    extra_samples = (ee.FeatureCollection('users/vieiramesquita/LAPIG-PASTURE/VECTORS/Pasture_Extra_Brasil_plus_Date_v1_3')
+    extra_samples = (ee.FeatureCollection('users/vieiramesquita/LAPIG-PASTURE/VECTORS/Pasture_Extra_Brasil_plus_Date_v1_6')
       .filter(ee.Filter.lte('YearPastur',year)))
 
     reclass_extra_samples = extra_samples.map(make_classFieldName).select(classFieldName)
 
-    trainSamples = trainSamples_main.merge(reclass_extra_samples)
+	if year > 2024:
+      classFieldName_mosaic = 'cons_2024'
+	elif year < 1985:
+      classFieldName_mosaic = 'cons_1985' 
+	else:
+      classFieldName_mosaic = classFieldName
+
+  	extra_mosaic = ee.FeatureCollection('users/vieiramesquita/LAPIG-PASTURE/VECTORS/pasture_extra_mapbiomas_col10_mosaicos_pastagem')
+  	extra_mosaic = extra_mosaic.select([classFieldName_mosaic],[classFieldName])
+
+  	trainSamples = (trainSamples_main
+    	.filterBounds(cartas_buffer)
+    	.merge(reclass_extra_samples.filterBounds(cartas_buffer))
+    	.merge(extra_mosaic.filterBounds(cartas_buffer)));
     
     #Creates and define the classifier parameters (NUmber of Trees, Variables per Split, Minimum Leaf Population, Bag Fraction, Max nodes and Seed)
     classifier = ee.Classifier.smileRandomForest(rfNTrees, rfVarPersplit, 1, rfBagFraction, None, year);
