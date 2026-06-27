@@ -74,7 +74,7 @@ python 2_Multidimensional_median_filter_parallel.py <input_dir_name> <output_dir
 
 Like in the section 2, we will use the *gdalbuildvrt* and *gdal_translate* to merge the result files by year.
 
-## 5. Softmaps (probabilistic) to Hardmaps (binary).
+## 5. Softmaps to Hardmaps.
 
 Do the conversion of probabilistic  (softmap) to binary maps (hardmap) using gdal_calc.py.
 
