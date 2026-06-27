@@ -74,6 +74,15 @@ python 2_Multidimensional_median_filter_parallel.py <input_dir_name> <output_dir
 
 Like in the section 2, we will use the *gdalbuildvrt* and *gdal_translate* to merge the result files by year.
 
+## 5. Softmaps (probabilistic) to Hardmaps (binary).
+
+Do the conversion of probabilistic  (softmap) to binary maps (hardmap) using gdal_calc.py.
+
+* gdal_calc.py -A lapig_pasture_map_filtered_<year xxxx>.tif --type='Byte' --outfile='lapig_pasture_map_filtered_<year xxxx>_hard.tif' \
+  --calc='(A>=40)*1' --NoDataValue=0 --format='COG' --co 'OVERVIEWS=IGNORE_EXISTING' \
+  --co 'COMPRESS=ZSTD' --co 'LEVEL=22' --co 'PREDICTOR=1' --co 'INTERLEAVE=BAND' \
+  --co 'NUM_THREADS=ALL_CPUS' --co 'TILED=YES' --co 'BIGTIFF=YES'
+
 <details>
 <summary> <b>Changelog</b> </summary>
 <p>* Version 3.0 released (Github version)</p>
