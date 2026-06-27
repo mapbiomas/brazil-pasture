@@ -47,7 +47,7 @@ uv run pip install GDAL==3.10
 
 ## 1. Run classification in Google Earth Engine (GEE)
 
-* [Access this link](https://code.earthengine.google.com/f789584eda6ba58ededc0526f0de8da7) and, if desired, change the parameters of ***year***, ***landsatWRSPath_nm***, ***landsatWRSRow_nm***, ***my_folder***. After that you can click in **Run** and export your result in **Task**.
+* [Access this link](https://code.earthengine.google.com/52594be3e87b56843f5a251807d0a533) and, if desired, change the parameters of ***year***, ***landsatWRSPath_nm***, ***landsatWRSRow_nm***, ***my_folder***. After that you can click in **Run** and export your result in **Task**.
 
 ## 2. Prepare the data for Multidimensional Median Filter
 
