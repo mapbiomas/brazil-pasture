@@ -52,7 +52,7 @@ def createOutputImage(referenceFile, outputFile, startRow, xSize, data, imageFor
   outRaster.SetGeoTransform((newOriginX, pixelWidth, 0, originY, 0, pixelHeight))
   outRaster.SetProjection(outRasterSRS.ExportToWkt())
   rasterBand = outRaster.GetRasterBand(1)
-  rasterBand.WriteArray(np.where(data >= 5100, 1, 0).astype(np.byte))
+  rasterBand.WriteArray(np.where(data >= 40, 1, 0).astype(np.byte))
   rasterBand.FlushCache()
 
   return outRaster
