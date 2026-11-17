@@ -82,7 +82,7 @@ parallel --jobs 6 "gdal_translate 3_FILTERED_UPSAMPLIG/veg_evi_mod13q1_{1}_avg_f
 # 4 - PASTURE MASKING (Using MapBiomas)
 # ------------------------------------------------------------------------------
 mkdir -p 4_CROP_PASTURE
-parallel --jobs 6 "gdal_calc.py -A 3_FILTERED_UPSAMPLIG/veg_evi_mod13q1_{1}_avg_filtered_res.tif -B PASTURE_MASK/mapbiomas-collection10-pastagem-{1}.tif \
+parallel --jobs 6 "gdal_calc.py -A 3_FILTERED_UPSAMPLIG/veg_evi_mod13q1_{1}_avg_filtered_res.tif -B PASTURE_MASK/mapbiomas-collection11-pastagem-{1}.tif \
     --outfile='4_CROP_PASTURE/pasture_evi_Y{1}_AVG_fill.tif' --calc='((B==1) & (A !=-3000))*A + ((B==0) | (A ==-3000))*-3000' \
     --overwrite --NoDataValue=-3000 --co='COMPRESS=LZW' --co='BIGTIFF=YES' --co='TILED=YES'" ::: {2000..2025}
 
