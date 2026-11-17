@@ -7,7 +7,7 @@
 # ==============================================================================
 
 ### PRE-PROCESSING: DATA ACQUISITION
-cat mod13q1_stl-trend_tiles_col10.csv > urls.txt
+cat mod13q1_stl-trend_tiles_2000_2025.csv > urls.txt
 parallel -j 20 wget -q {} :::: urls.txt
 
 # ------------------------------------------------------------------------------
