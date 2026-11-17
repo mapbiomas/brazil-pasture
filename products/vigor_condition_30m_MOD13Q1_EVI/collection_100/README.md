@@ -2,7 +2,7 @@
 
 # Pasture Vigor Condition (CVP) processing pipeline
 
-This repository contains the high-performance processing chain used to generate the **Pasture Vigor Condition (CVP)** time series for Brazil (2000–2024). This workflow implements the methodologies described in the **[MapBiomas ATDB](https://brasil.mapbiomas.org/wp-content/uploads/sites/4/2026/01/Pasture-Appendix-ATBD-Collection-10-V2.pdf) for Collections 7, 8, 9, and 10**.
+This repository contains the high-performance processing chain used to generate the **Pasture Vigor Condition (CVP)** time series for Brazil (2000–2024). This workflow implements the methodologies described in the **[MapBiomas ATDB](https://brasil.mapbiomas.org/wp-content/uploads/sites/3/2026/08/Pasture-Appendix-ATBD-Collection-11-V1.pdf) for Collections 7, 8, 9, 10, and 11**.
 
 ## 🛰🔬 Methodology & Scientific Basis
 
