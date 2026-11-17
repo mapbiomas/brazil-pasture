@@ -36,7 +36,7 @@ The core logic is divided into specialized scripts:
 * **`run_vigor_condition.sh`**: Main orchestration script using `GDAL` and `GNU Parallel`.
 * **`2_0_temporal_median_filter_parallel.py`**: Python implementation for temporal smoothing.
 * **`6_normalization.py`**: Normalizes EVI values by Biome to account for regional edaphoclimatic conditions.
-* **`mod13q1_stl-trend_tiles_col10.csv`**: Manifest of trend-decomposed MODIS tiles for download.
+* **`mod13q1_stl-trend_tiles_2000_2025.csv`**: Manifest of trend-decomposed MODIS tiles for download.
 
 ## 💻 Running on Windows (via WSL2)
 
