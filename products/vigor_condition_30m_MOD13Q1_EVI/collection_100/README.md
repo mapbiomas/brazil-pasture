@@ -22,7 +22,7 @@ To extract stable and reliable pixel information, the following pre-procesing wa
 
 
 
-### 3. Recent Refinements (Collections 7–10)
+### 3. Recent Refinements (Collections 7–11)
 
 Following the latest MapBiomas standards, this pipeline implements two critical updates:
 
