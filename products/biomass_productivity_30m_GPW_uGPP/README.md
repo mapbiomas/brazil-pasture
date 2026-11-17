@@ -1,10 +1,10 @@
 ![Vinícius Mesquita](lapig_logo_github.png)
 
-# Pasture Aboveground Dry Biomass Productivity Mapping (MapBiomas Collection 10)
+# Pasture Aboveground Dry Biomass Productivity Mapping (MapBiomas Collection 11)
 
-This repository contains the Google Earth Engine (GEE) implementation for calculating annual **Pasture Aboveground Dry Biomass** (tonnes Dry Matter (DM)/ha/year) across Brazil for the period 2000–2024.
+This repository contains the Google Earth Engine (GEE) implementation for calculating annual **Pasture Aboveground Dry Biomass** (tonnes Dry Matter (DM)/ha/year) across Brazil for the period 2000–2025.
 
-The methodology integrates **MapBiomas Collection 10** land cover data with high-resolution [uncalibrated Gross Primary Productivity (uGPP)](https://developers.google.com/earth-engine/datasets/catalog/projects_global-pasture-watch_assets_ggpp-30m_v1_ugpp_m?hl=pt-br) datasets from the **Global Pasture Watch (GPW)** initiative.
+The methodology integrates **MapBiomas Collection 11** land cover data with high-resolution [uncalibrated Gross Primary Productivity (uGPP)](https://developers.google.com/earth-engine/datasets/catalog/projects_global-pasture-watch_assets_ggpp-30m_v1_ugpp_m?hl=pt-br) datasets from the **Global Pasture Watch (GPW)** initiative.
 
 ---
 
@@ -31,9 +31,9 @@ The **uGPP** component incorporates:
 
 ---
 
-## 2. Dry Biomass Conversion (Collection 10)
+## 2. Dry Biomass Conversion (Collection 11)
 
-For MapBiomas **Collection 10**, the annual uGPP carbon estimates ($gC/m²/year$) are converted into total annual **Aboveground Dry Biomass** ($t~DM/ha/year$) using parameters optimized for Brazilian cultivated pastures (*Brachiaria spp.*):
+For MapBiomas **Collection 11**, the annual uGPP carbon estimates ($gC/m²/year$) are converted into total annual **Aboveground Dry Biomass** ($t~DM/ha/year$) using parameters optimized for Brazilian cultivated pastures (*Brachiaria spp.*):
 
 * **$\epsilon_{LUEmax}$ Factor (0.5):** The calibrated maximum light-use efficiency parameter applied to the uGPP baseline for Brazilian pasturelands.
 * **Carbon-to-Biomass (2.3):** Conversion factor based on the assumption that carbon represents approximately **43%** of the total dry matter in common tropical grasses.
@@ -46,8 +46,8 @@ For MapBiomas **Collection 10**, the annual uGPP carbon estimates ($gC/m²/year$
 
 | Variable | Source | Resolution |
 | --- | --- | --- |
-| **Land Cover Mask** | MapBiomas Brazil Collection 10 (Class 15) | 30 m |
-| **uGPP (Productivity)** | Global Pasture Watch (GPW) v1 | 30 m |
+| **Land Cover Mask** | MapBiomas Brazil Collection 11 (Class 15) | 30 m |
+| **uGPP (Productivity)** | Global Pasture Watch (GPW) v1-1 | 30 m |
 
 ### Technical Considerations
 
@@ -60,13 +60,13 @@ For MapBiomas **Collection 10**, the annual uGPP carbon estimates ($gC/m²/year$
 
 The script follows a direct conversion logic:
 
-1. **Pasture Masking:** Isolates **Class 15** (Cultivated Pasture) from MapBiomas Collection 10 for each year.
+1. **Pasture Masking:** Isolates **Class 15** (Cultivated Pasture) from MapBiomas Collection 11 for each year.
 2. **Biomass Calculation:** Multiplies the GPW `ugpp_m` image by the applied **0.5** ($\epsilon_{LUEmax}$), the **2.3** (Biomass conversion factor), and the **0.01** (Unit scaling factor).
 3. **Export:** Results are generated as annual mosaics and exported as Cloud-Optimized GeoTIFFs (COG).
 
 ### Code Editor Link
 
-**[Google Earth Engine Code Editor - Pasture Biomass](https://code.earthengine.google.com/57bac4c92ed2adc25a378c133eb83d55)**
+**[Google Earth Engine Code Editor - Pasture Biomass](https://code.earthengine.google.com/9de430a4df4f333a0e5f98d626186f71)**
 
 ---
 
@@ -74,7 +74,7 @@ The script follows a direct conversion logic:
 
 ### Technical Document (ATBD)
 
-* [Pasture Appendix ATBD - Collection 10 V2](https://brasil.mapbiomas.org/wp-content/uploads/sites/4/2026/01/Pasture-Appendix-ATBD-Collection-10-V2.pdf)
+* [Pasture Appendix ATBD - Collection 11](https://brasil.mapbiomas.org/wp-content/uploads/sites/3/2026/08/Pasture-Appendix-ATBD-Collection-11-V1.pdf)
 
 ### Key Scientific Literature
 
