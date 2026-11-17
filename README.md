@@ -27,7 +27,7 @@ The repository is organized into subfolders by image source and processing resol
 - [`lulc_10m_sentinel`](https://github.com/mapbiomas/brazil-pasture/tree/main/lulc_10m_sentinel):  
   Scripts for generating annual LULC maps at **10-meter resolution**, using Sentinel-2 imagery.
 
-- [`product_pasture_vigor_condition_30m_MOD13Q1_EVI`](https://github.com/mapbiomas/brazil-pasture/tree/main/products/pasture_vigor_condition_30m_MOD13Q1_EVI):  
+- [`product_pasture_vigor_condition_30m_MOD13Q1_EVI`](https://github.com/mapbiomas/brazil-pasture/tree/main/products/vigor_condition_30m_MOD13Q1_EVI/collection_100):  
   Scripts for generating Pasture Vigor Condition product at **30-meter resolution**, using MOD13Q1 EVI and LULC 30m pasture maps.
   
 - [`product_pasture_biomass_productivity_30m_GPW_uGPP`](https://github.com/mapbiomas/brazil-pasture/tree/main/products/pasture_biomass_productivity_30m_GPW_uGPP):  
